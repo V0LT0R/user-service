@@ -1,44 +1,158 @@
 :root { 
-    --bg:#0b1020; --card:#121a33; --muted:#8ea0c0; --fg:#e8eefc; --accent:#4da3ff; --danger:#ff5a6b; 
+    --bg:#0b1020; 
+    --card:#121a33; 
+    --muted:#8ea0c0; 
+    --fg:#e8eefc; 
+    --accent:#4da3ff; 
+    --danger:#ff5a6b; 
 }
+
 * { 
-    box-sizing: border-box; }
+    box-sizing: border-box; 
+}
+
 html,body { 
-    margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--fg); }
+    margin:0; 
+    padding:0; 
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
+    background:var(--bg); color:var(--fg); 
+}
+
 a { 
-    color:var(--accent); text-decoration:none; }
+    color:var(--accent); 
+    text-decoration:none; 
+}
 .container { 
-    max-width: 1000px; margin: 0 auto; padding: 16px; }
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 16px; 
+}
+
 header { 
-    display:flex; align-items:center; justify-content:space-between; }
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between; 
+}
+
 nav a, nav button { 
-    margin-right: 12px; }
+    margin-right: 12px; 
+}
+
 .brand { 
-    font-weight: 600; }
+    font-weight: 600; 
+}
+
 .grid { 
-    display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; }
+    display:grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap:16px; 
+}
+
 .card { 
-    background:var(--card); padding:16px; border-radius:16px; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+    background:var(--card); 
+    padding:16px; 
+    border-radius:16px; 
+    box-shadow: 0 8px 24px rgba(0,0,0,.25); 
+}
+
 label { 
-    display:block; margin: 10px 0; color: var(--muted); }
+    display:block; 
+    margin: 10px 0; 
+    color: var(--muted); 
+}
+
 input, select { 
-    width:100%; padding:10px 12px; border-radius:10px; border:1px solid #243055; background:#0f1833; color:var(--fg); }
+    width:100%; 
+    padding:10px 12px; 
+    border-radius:10px; 
+    border:1px solid #243055; 
+    background:#0f1833; 
+    color:var(--fg); 
+}
+
 button { 
-    padding:10px 14px; border-radius:10px; border:1px solid #2a3a6b; background:#17305f; color:var(--fg); cursor:pointer; }
+    padding:10px 14px; 
+    border-radius:10px; 
+    border:1px solid #2a3a6b; 
+    background:#17305f; 
+    color:var(--fg); 
+    cursor:pointer; 
+}
+
 button.secondary { 
-    background:#162545; }
+    background:#162545; 
+}
+
 button.danger { 
-    background:#3d0f19; border-color:#5e1521; color:#ffb3bb; }
-button:disabled { opacity:.6; cursor:not-allowed; }
-.hidden { display:none !important; }
-.kv { display:grid; grid-template-columns: max-content 1fr; gap:6px 16px; }
-.kv dt { color:var(--muted); }
-.msg { margin-top:10px; color:#bcd4ff; min-height: 18px; }
-.table { width:100%; border-collapse: collapse; margin-top:10px; }
-.table th, .table td { border-bottom: 1px solid #26355f; padding:8px; text-align:left; }
-.badge { padding:2px 8px; border-radius:999px; font-size:.85em; }
-.badge.green { background:#173f2a; color:#9affcc; border:1px solid #206344; }
-.badge.red { background:#4b0e19; color:#ffb3c2; border:1px solid #7a1b2d; }
-.toolbar { display:flex; gap:16px; align-items:center; }
-.pager { display:flex; gap:12px; align-items:center; justify-content:flex-end; margin-top:10px; }
-footer { opacity:.6; }
+    background:#3d0f19; 
+    border-color:#5e1521; 
+    color:#ffb3bb; 
+}
+
+button:disabled { 
+    opacity:.6; 
+    cursor:not-allowed; 
+}
+
+.hidden { 
+    display:none !important; 
+}
+
+.kv { 
+    display:grid; 
+    grid-template-columns: max-content 1fr; 
+    gap:6px 16px; 
+}
+
+.kv dt { 
+    color:var(--muted); 
+}
+
+.msg { 
+    margin-top:10px; 
+    color:#bcd4ff; 
+    min-height: 18px; 
+}
+
+.table { 
+    width:100%; 
+    border-collapse: collapse; 
+    margin-top:10px; 
+}
+
+.table th, .table td { 
+    border-bottom: 1px solid #26355f; 
+    padding:8px; 
+    text-align:left; 
+}
+
+.badge { 
+    padding:2px 8px; 
+    border-radius:999px; 
+    font-size:.85em; 
+}
+
+.badge.green { 
+    background:#173f2a; 
+    color:#9affcc; 
+    border:1px solid #206344; 
+}
+
+.badge.red { 
+    background:#4b0e19; 
+    color:#ffb3c2; 
+    border:1px solid #7a1b2d; 
+}
+.toolbar { 
+    display:flex; gap:16px; 
+    align-items:center; 
+}
+.pager { 
+    display:flex; gap:12px; 
+    align-items:center; 
+    justify-content:flex-end; 
+    margin-top:10px; 
+}
+footer { 
+    opacity:.6; 
+}
