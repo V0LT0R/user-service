@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { blockUser, getUserById, listUsers } from '../services/user.service.js';
+import { blockUser, getUserById, listUsers } from '../services/user.service';
 
 export async function getById(req: Request, res: Response) {
   const { id } = req.params;
@@ -9,20 +9,24 @@ export async function getById(req: Request, res: Response) {
 }
 
 export async function getList(req: Request, res: Response) {
-  const { page, perPage, isActive } = req.query as any;
-  const parsedActive = typeof isActive === 'string' ? isActive === 'true' : undefined;
+  // мягкий парсинг query
+  const page = Math.max(1, Number(req.query.page ?? 1) || 1);
+  const perPageRaw = Number(req.query.perPage ?? 10);
+  const perPage = Math.min(100, Math.max(1, perPageRaw || 10));
 
-  const result = await listUsers({
-    page: Number(page),
-    perPage: Number(perPage),
-    isActive: parsedActive
-  });
+  let isActive: boolean | undefined = undefined;
+  if (typeof req.query.isActive !== 'undefined') {
+    const v = String(req.query.isActive).toLowerCase();
+    if (v === 'true') isActive = true;
+    if (v === 'false') isActive = false;
+  }
+
+  const result = await listUsers({ page, perPage, isActive });
   return res.json(result);
 }
 
 export async function block(req: Request, res: Response) {
   const { id } = req.params;
-  // если сам себя блочит и это он – ок, если админ – тоже ок.
   const user = await blockUser(id);
   return res.json(user);
 }

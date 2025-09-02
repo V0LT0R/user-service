@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Service – Админка</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Админка</h1>
+    <nav>
+      <a href="/" class="brand">← На главную</a>
+      <button id="logoutBtn" class="secondary">Выйти</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="toolbar">
+        <label>
+          Показать только активных:
+          <input type="checkbox" id="onlyActive" />
+        </label>
+        <label>
+          На странице:
+          <select id="perPage">
+            <option>5</option>
+            <option selected>10</option>
+            <option>20</option>
+          </select>
+        </label>
+      </div>
+
+      <table class="table" id="usersTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>ФИО</th>
+            <th>Дата рождения</th>
+            <th>Email</th>
+            <th>Роль</th>
+            <th>Статус</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="pager">
+        <button id="prevBtn">Назад</button>
+        <span id="pageInfo"></span>
+        <button id="nextBtn">Вперёд</button>
+      </div>
+
+      <div id="adminMsg" class="msg"></div>
+    </section>
+  </main>
+
+  <script src="/js/admin.js" defer></script>
+</body>
+</html>
